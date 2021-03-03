@@ -8,11 +8,13 @@ import { AppComponent } from './app.component';
 
 import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ConnexionComponent } from './connexion/connexion.component';
+import { InscriptionComponent } from './inscription/inscription.component';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ConnexionComponent
+    ConnexionComponent,
+    InscriptionComponent
   ],
   imports: [
     BrowserModule,

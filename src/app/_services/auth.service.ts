@@ -21,8 +21,8 @@ export class AuthService {
     }, httpOptions);
   }
 
-  register(mail: string, password: string, nom: string, prenom: string,
-    adresseFacturation: string, adresseLivraison: string, telephone: string): Observable<any> {
+  inscription(mail: string, password: string, nom: string, prenom: string,
+    adresseFacturation: string, telephone: string, adresseLivraison?: string): Observable<any> {
     return this.http.post(AUTH_API + 'inscrire', {
       mail,
       password,

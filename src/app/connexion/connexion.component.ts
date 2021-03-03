@@ -26,6 +26,7 @@ export class ConnexionComponent implements OnInit {
 
   onSubmit(): void {
     const { mail, password } = this.form;
+    
     this.authService.connexion(mail, password).subscribe(
       data => {
         this.tokenStorage.saveToken(data.accessToken);
@@ -36,7 +37,6 @@ export class ConnexionComponent implements OnInit {
         this.reloadPage();
       },
       err => {
-        console.log(err)
         this.messageErreur = err.error.message;
         this.connectionRate = true;
       }
