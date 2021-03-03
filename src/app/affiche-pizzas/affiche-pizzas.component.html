@@ -1,0 +1,25 @@
+
+<!--
+
+
+<div *ngIf="pizza$ | async ">
+    <p>affiche-pizzas works!</p>
+    <ul>
+       
+        <li *ngFor="let pizza of (pizza$ | async)?.piz_list">
+            <p>affiche-pizzas works!</p>
+            <div *ngIf="pizza">
+                <p > pizzalio</p>
+            </div>
+           <span>{{pizza | json}}</span> 
+        </li> 
+    </ul>
+</div>
+-->
+
+<ul>
+    <li *ngFor="let pizza of pizza$ | async ">{{pizza.piz_nom}}</li>
+</ul>
+<div *ngIf="pizzaCount">
+    <p> {{pizzaCount}} </p>
+</div>

@@ -11,13 +11,15 @@ import {MatListModule} from '@angular/material/list'
 import {MatButtonModule} from '@angular/material/button'
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FooterComponent } from './footer/footer.component';
+import { AffichePizzasComponent } from './affiche-pizzas/affiche-pizzas.component';
 
 
 
 @NgModule({
   declarations: [
     AppComponent,
-    FooterComponent
+    FooterComponent,
+    AffichePizzasComponent,
   ],
   imports: [
     BrowserModule,
