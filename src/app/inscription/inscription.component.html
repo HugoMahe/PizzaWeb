@@ -1,0 +1,155 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 pt-3">
+        <img
+            id="profile-img"
+            src="//ssl.gstatic.com/accounts/ui/avatar_2x.png"
+            class="rounded-circle mx-auto col-md-3"
+        />
+        <div class="card-body">
+            <h5 class="card-title">Inscription</h5>
+            <form
+                *ngIf="!aReussi"
+                name="form"
+                (ngSubmit)="f.form.valid && onSubmit()"
+                #f="ngForm"
+                novalidate
+            >
+                <div class="form-group">
+                    <label for="mail">(*) Mail</label>
+                    <input
+                        type="email"
+                        class="form-control"
+                        name="mail"
+                        [(ngModel)]="form.mail"
+                        required
+                        email
+                        #mail="ngModel"
+                    />
+                    <div class="alert alert-danger" *ngIf="mail.errors && f.submitted">
+                        <div *ngIf="mail.errors.required">Le mail est nécessaire !</div>
+                        <div *ngIf="mail.errors.email">
+                            Le mail doit être valide !
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="password">(*) Mot de passe</label>
+                    <input
+                        type="password"
+                        class="form-control"
+                        name="password"
+                        [(ngModel)]="form.password"
+                        required
+                        minlength="6"
+                        #password="ngModel"
+                    />
+                    <div
+                        class="alert alert-danger"
+                        role="alert"
+                        *ngIf="password.errors && f.submitted"
+                    >
+                        <div *ngIf="password.errors.required">Le mot de passe est nécessaire !</div>
+                        <div *ngIf="password.errors.minlength">
+                        Le mot de passe doit faire au moins 6 caractères !
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="nom">(*) Nom</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="nom"
+                        [(ngModel)]="form.nom"
+                        required
+                        minlength="3"
+                        #nom="ngModel"
+                    />
+                    <div class="alert-danger" *ngIf="nom.errors && f.submitted">
+                        <div *ngIf="nom.errors.required">Nom nécessaire</div>
+                        <div *ngIf="nom.errors.minlength">
+                        Le nom doit faire plus de 3 lettres
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="prenom">(*) Prénom</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="prenom"
+                        [(ngModel)]="form.prenom"
+                        required
+                        minlength="3"
+                        #prenom="ngModel"
+                    />
+                    <div class="alert-danger" *ngIf="prenom.errors && f.submitted">
+                        <div *ngIf="prenom.errors.required">Prénom nécessaire</div>
+                        <div *ngIf="prenom.errors.minlength">
+                        Le prénom doit faire plus de 3 lettres
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="adresseLivraison">(*) Adresse de livraison</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="adresseLivraison"
+                        [(ngModel)]="form.adresseLivraison"
+                        #adresseLivraison="ngModel"
+                    />
+                    <div class="alert-danger" *ngIf="adresseLivraison.errors && f.submitted">
+                        <div *ngIf="adresseLivraison.errors.required">Adresse de livraison nécessaire</div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="adresseFacturation">Adresse de facturation</label>
+                    <input
+                        type="text"
+                        class="form-control"
+                        name="adresseFacturation"
+                        [(ngModel)]="form.adresseFacturation"
+                        #adresseFacturation="ngModel"
+                    />
+                </div>
+                <div class="form-group">
+                    <label for="telephone">(*) Numéro de téléphone</label>
+                    <input
+                        type="tel"
+                        class="form-control"
+                        name="telephone"
+                        [(ngModel)]="form.telephone"
+                        required
+                        minlength="10"
+                        #telephone="ngModel"
+                    />
+                    <div class="alert-danger" *ngIf="telephone.errors && f.submitted">
+                        <div *ngIf="telephone.errors.required">telephone nécessaire</div>
+                        <div *ngIf="telephone.errors.minlength">
+                        Le nom doit faire plus de 3 lettres
+                        </div>
+                    </div>
+                </div>
+                <div class="form-group">
+                    <button class="btn btn-primary btn-block">
+                        Inscription
+                    </button>
+                </div>
+                <div class="form-group">
+                    <div
+                        class="alert alert-danger"
+                        role="alert"
+                        *ngIf="f.submitted && aRate"
+                    >
+                        Connexion raté : {{ messageErreur }}
+                    </div>
+                </div>
+            </form>
+    
+            <div class="alert alert-success" *ngIf="aReussi">
+                Inscription réussie.
+            </div>
+        </div>
+    </div>
+</div>
