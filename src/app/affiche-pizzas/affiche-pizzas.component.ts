@@ -16,7 +16,7 @@ export class AffichePizzasComponent implements OnInit {
   pizza$!: Observable<IPizza []>;
 
 
-  constructor(private readonly pizService: PizzaSearchService  ) {
+  constructor(private readonly pizService: PizzaSearchService) {
 
     
   }
@@ -24,6 +24,7 @@ export class AffichePizzasComponent implements OnInit {
   ngOnInit() {
     console.log("demarrage de la requete");
     this.pizza$=this.pizService.getPizzas();
+    console.log( this.pizza$);
     this.getPizzaCount();
   }
 

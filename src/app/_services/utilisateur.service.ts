@@ -1,8 +1,9 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
+import { IUtilisateur } from '../Models/utilisateur.interface';
 
-const API_URL = '/api/utilisateur/';
+const API_URL = 'http://localhost:8080/api/utilisateur/';
 
 @Injectable({
   providedIn: 'root'
@@ -10,7 +11,7 @@ const API_URL = '/api/utilisateur/';
 export class UtilisateurService {
   constructor(private http: HttpClient) { }
 
-  getListePizza(): Observable<any> {
-    return this.http.get(API_URL + 'profile', { responseType: 'text' });
+  getProfil(mail:string): Observable<IUtilisateur> {
+    return this.http.get<IUtilisateur>(API_URL + 'profil/' + mail);
   }
 }

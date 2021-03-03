@@ -7,11 +7,12 @@
       <h1>Pizza Web</h1>
       <span class="menu-spacer"></span>
       <div>
-        <a mat-button href class="nav-link" (click)="deconnexion()" *ngIf="estConnecte">Déconnexion</a>
         <a mat-button [routerLink]="'/connexion'" *ngIf="!estConnecte"> Connexion </a>
         <a mat-button [routerLink]="'/inscription'" *ngIf="!estConnecte"> Inscription </a>
+        <a mat-button href class="nav-link" (click)="deconnexion()" *ngIf="estConnecte">Déconnexion</a>
+        <a mat-button [routerLink]="'/profil'" *ngIf="estConnecte">Profil</a>
         <a mat-button [routerLink]="'/'"> Commander </a>
-        <a mat-button [routerLink]="'/'"> La carte </a>
+        <a mat-button [routerLink]="'/pizzas'"> La carte </a>
         <a mat-button [routerLink]="'/'"> Nos promotions </a>
         <a mat-button [routerLink]="'/'"> Contacts </a>
       </div>
