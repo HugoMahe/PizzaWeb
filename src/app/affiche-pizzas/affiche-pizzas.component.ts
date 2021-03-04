@@ -24,14 +24,22 @@ export class AffichePizzasComponent implements OnInit {
   ngOnInit() {
     console.log("demarrage de la requete");
     this.pizza$=this.pizService.getPizzas();
-    this.getPizzaCount();
   }
 
   getPizzaCount(){
     this.pizService.getPizzas().subscribe(data => {
       this.pizzaCount=data.length;
-      console.log(this.pizzaCount)
-      console.log(data);
+      //console.log(this.pizzaCount)
+      //console.log(data);
+    });
+  }
+
+  getPizzaImage(){
+    this.pizService.getPizzas().subscribe(data => {
+      data.forEach(value =>{
+        this.pizService.getImagePizza(value.piz_id).subscribe(imageRetour =>{
+        });
+      });
     });
   }
 

@@ -12,6 +12,7 @@ import {MatButtonModule} from '@angular/material/button'
 import {MatSidenavModule} from '@angular/material/sidenav';
 import { FooterComponent } from './footer/footer.component';
 import { AffichePizzasComponent } from './affiche-pizzas/affiche-pizzas.component';
+import {ImageService} from './image.service';
 
 
 
@@ -32,7 +33,7 @@ import { AffichePizzasComponent } from './affiche-pizzas/affiche-pizzas.componen
     MatButtonModule,
     MatIconModule
   ],
-  providers: [],
+  providers: [ImageService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

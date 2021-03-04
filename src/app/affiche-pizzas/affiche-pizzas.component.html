@@ -18,8 +18,13 @@
 -->
 
 <ul>
-    <li *ngFor="let pizza of pizza$ | async ">{{pizza.piz_nom}}</li>
+    <li *ngFor="let pizza of pizza$ | async ">{{pizza.piz_nom}}
+        <div>lien a utiliser {{pizza.piz_image}}
+           <img [src]="pizza.image | async">
+        </div>
+    </li>
 </ul>
-<div *ngIf="pizzaCount">
+
+<div class="item" *ngIf="pizzaCount">
     <p> {{pizzaCount}} </p>
 </div>
