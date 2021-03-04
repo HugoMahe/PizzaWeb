@@ -1,0 +1,20 @@
+<div class="row">
+    <div class="card col-md-6 offset-md-3 pt-3">
+        <div class="card-body">
+            <h1 class="card-title">Profil</h1>
+            <p>{{utilisateur.mail}}</p>
+            <p>{{utilisateur.prenom}} {{utilisateur.nom}}</p>
+            <p>Adresse de Facturation :</p>
+            <p>&nbsp;&nbsp;&nbsp;{{utilisateur.adresseFacturation}}</p>
+            <div *ngIf="utilisateur.adresseLivraison == 'SAME'" class="texteGris">
+                <p>Adresse de Livraison : (identique à celle de livraison)</p>
+                <p>&nbsp;&nbsp;&nbsp;{{utilisateur.adresseFacturation}}</p>
+            </div>
+            <div *ngIf="utilisateur.adresseLivraison != 'SAME'">
+                <p>Adresse de Livraison :</p>
+                <p>&nbsp;&nbsp;&nbsp;{{utilisateur.adresseLivraison}}</p>
+            </div>
+            <p>{{utilisateur.telephone}}</p>
+        </div>
+    </div>
+</div>

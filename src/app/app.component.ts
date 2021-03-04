@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { TokenStorageService } from './_services/token-storage.service';
 
 @Component({
   selector: 'app-root',
@@ -8,4 +9,25 @@ import { Component } from '@angular/core';
 export class AppComponent {
   title = 'pizza-app';
   showFiller=false;
+  estConnecte = false;
+  mail?: string;
+  prenom?: string;
+
+  constructor(private tokenStorageService: TokenStorageService) { }
+
+  ngOnInit(): void {
+    this.estConnecte = !!this.tokenStorageService.getToken();
+
+    if (this.estConnecte) {
+      const user = this.tokenStorageService.getUser();
+      console.log(user)
+      this.mail = user.mail;
+      this.prenom = user.prenom;
+    }
+  }
+
+  deconnexion(): void {
+    this.tokenStorageService.signOut();
+    window.location.reload();
+  }
 }

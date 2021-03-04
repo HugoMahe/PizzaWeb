@@ -16,7 +16,7 @@ export class AffichePizzasComponent implements OnInit {
   pizza$!: Observable<IPizza []>;
 
 
-  constructor(private readonly pizService: PizzaSearchService  ) {
+  constructor(private readonly pizService: PizzaSearchService) {
 
     
   }
