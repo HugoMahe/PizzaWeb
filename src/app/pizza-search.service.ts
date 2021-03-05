@@ -46,11 +46,6 @@ export class PizzaSearchService {
    }
 
    public getPizzaDetail(idParam: number): Observable<IPizza> {
-    return this.http.get<IPizza>('http://localhost:8080/api/pizza/detail/' + idParam).pipe(
-      map(pizza => {
-        pizza.image=this.getImagePizza(pizza.piz_id);
-        return pizza;
-      })
-    );
+    return this.http.get<IPizza>('http://localhost:8080/api/pizza/detail/' + idParam);
   }
 }

@@ -1,17 +1,23 @@
-<div class="modal-dialog" role="document">
-    <div class="modal-content" *ngIf="pizza$ | async; let pizza">
-        <div class="modal-header">
-            <h3 class="modal-title">{{pizza.piz_nom}}</h3>
-            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-            </button>
-        </div>
-        <div class="modal-body">
-            <p>Modal body text goes here.</p>
-        </div>
-        <div class="modal-footer">
-            <button type="button" class="btn btn-primary">Ajouter au panier</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+<div class="modal" tabindex="-1" id="pizzaDetail">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content" *ngIf="pizza$ | async; let pizza">
+            <div class="modal-header">
+                <h3 class="modal-title">{{pizza.piz_nom}}</h3>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <ul>
+                    <li *ngFor="let ingredient of pizza.ingredients">{{ingredient.igd_nom}}</li>
+                </ul>
+                <p class="text-right">{{pizza.piz_prix}}€</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-primary">Ajouter au panier</button>
+                <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
+            </div>
         </div>
     </div>
 </div>
