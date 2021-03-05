@@ -1,0 +1,19 @@
+<p>suivi-commande works!</p>
+<div class="row">
+    <div *ngFor="let cmd of commande$ | async" class="divCmd">
+        <div class="card" data-toggle="modal">
+            <div class="card-body">
+                <div class="row">
+                    <div>
+                        <p>ID de la commande</p>
+                        <h3 class="card-title text-pizza">{{cmd.cmd_id}}</h3>
+                        <p>Date de la commande</p>
+                        <h3 class="card-title text-pizza">{{cmd.cmd_date}}</h3>
+                        <p>Status de la commande</p>
+                        <h3 class="card-title text-pizza">{{cmd.cmd_status}}</h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

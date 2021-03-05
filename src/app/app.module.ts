@@ -23,6 +23,7 @@ import { ContactsComponent } from './contacts/contacts.component';
 import { FormContactComponent } from './form-contact/form-contact.component';
 import { PanierComponent } from './panier/panier.component';
 import { PizzaComponent } from './pizza/pizza.component';
+import { SuiviCommandeComponent } from './suivi-commande/suivi-commande.component';
 
 @NgModule({
   declarations: [
@@ -35,7 +36,8 @@ import { PizzaComponent } from './pizza/pizza.component';
     ContactsComponent,
     FormContactComponent,
     PanierComponent,
-    PizzaComponent
+    PizzaComponent,
+    SuiviCommandeComponent
   ],
   imports: [
     BrowserModule,
