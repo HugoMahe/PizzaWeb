@@ -6,6 +6,7 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ProfilComponent } from './profil/profil.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { PanierComponent } from './panier/panier.component';
+import { SuiviCommandeComponent} from './suivi-commande/suivi-commande.component'
 
 const routes: Routes = [
   { path: 'connexion', component: ConnexionComponent },
@@ -13,7 +14,8 @@ const routes: Routes = [
   { path: 'profil', component: ProfilComponent },
   { path: 'pizzas', component: AffichePizzasComponent },
   { path: 'contacts', component: ContactsComponent },
-  { path: 'panier', component: PanierComponent  }
+  { path: 'panier', component: PanierComponent  },
+  { path: 'suiviCommande', component: SuiviCommandeComponent}
 ];
 
 @NgModule({
