@@ -1,1 +1,14 @@
 <p>panier works!</p>
+<div *ngFor="let pizza of cart" class="divPanier">
+    <p>{{pizza.piz_nom}}</p>
+
+</div>
+
+<div>
+    <div class="modal-footer">
+        <div *ngIf= "totalAPayer">
+            <h1>{{totalAPayer}}</h1>
+        </div>
+        <button (click)="payer()" type="button" class="btn btn-primary">Payer  </button>
+    </div>
+</div>

@@ -10,3 +10,8 @@ export interface IPizza{
     piz_prix:string;
     ingredients: IIngredient[];
 }
+
+export interface IPanierPizza{
+    tabPizza: IPizza[];
+}
+
