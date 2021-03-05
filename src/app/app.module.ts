@@ -19,6 +19,10 @@ import { authInterceptorProviders } from './_helpers/auth.interceptor';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ProfilComponent } from './profil/profil.component';
+import { ContactsComponent } from './contacts/contacts.component';
+import { FormContactComponent } from './form-contact/form-contact.component';
+import { PanierComponent } from './panier/panier.component';
+import { PizzaComponent } from './pizza/pizza.component';
 
 @NgModule({
   declarations: [
@@ -27,7 +31,11 @@ import { ProfilComponent } from './profil/profil.component';
     AffichePizzasComponent,
     ConnexionComponent,
     InscriptionComponent,
-    ProfilComponent
+    ProfilComponent,
+    ContactsComponent,
+    FormContactComponent,
+    PanierComponent,
+    PizzaComponent
   ],
   imports: [
     BrowserModule,

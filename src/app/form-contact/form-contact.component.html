@@ -1,0 +1,34 @@
+<form #ContactForm="ngForm">
+    <div class="form-group">
+        <label for="types">Type de demandes</label>
+        <select class="form-control" id="type" required>
+        <option *ngFor="let type of reclamations" [value]="type">{{type}}</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="name">Entrez votre nom</label>
+        <input type="text" class="form-control" id="name"
+        required
+        [(ngModel)]="testValue" name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Entrez votre mail</label>
+        <input type="text" class="form-control" id="mail"
+        required
+        [(ngModel)]="testValue" name="name">
+    </div>
+
+    <div class="form-group">
+        <label for="name">Entrez la description</label>
+        <input type="text" class="form-control" id="description"
+        required
+        [(ngModel)]="testValue" name="name">
+    </div>
+
+    <form (ngSubmit)="onSubmit()" #ContactForm="ngForm">
+
+        <button type="submit" class="btn btn-success" [disabled]="!ContactForm.form.valid">Submit</button>
+
+</form>

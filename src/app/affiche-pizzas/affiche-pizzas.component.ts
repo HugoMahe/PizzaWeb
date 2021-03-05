@@ -1,8 +1,10 @@
 import { HttpClient } from '@angular/common/http';
+import { ViewChild } from '@angular/core';
 import { Component, OnInit } from '@angular/core';
 import { Observable } from 'rxjs';
 import { IPizza } from '../Models/pizza.interface';
 import { PizzaSearchService } from '../pizza-search.service';
+import { PizzaComponent } from '../pizza/pizza.component';
 
 @Component({
   selector: 'app-affiche-pizzas',
@@ -14,7 +16,9 @@ export class AffichePizzasComponent implements OnInit {
   //pizzaList:PizzaModule[]=[];
   pizzaCount?:number;
   pizza$!: Observable<IPizza []>;
+  @ViewChild(PizzaComponent) pizzaDetail!: PizzaComponent;
 
+  
 
   constructor(private readonly pizService: PizzaSearchService) {
 
@@ -34,13 +38,7 @@ export class AffichePizzasComponent implements OnInit {
     });
   }
 
-  getPizzaImage(){
-    this.pizService.getPizzas().subscribe(data => {
-      data.forEach(value =>{
-        this.pizService.getImagePizza(value.piz_id).subscribe(imageRetour =>{
-        });
-      });
-    });
+  setPizzaDetailId(id: number) {
+    this.pizzaDetail.setPizzaDetail(id);
   }
-
 }

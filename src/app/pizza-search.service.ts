@@ -45,4 +45,7 @@ export class PizzaSearchService {
     );
    }
 
+   public getPizzaDetail(idParam: number): Observable<IPizza> {
+    return this.http.get<IPizza>('http://localhost:8080/api/pizza/detail/' + idParam)
+  }
 }

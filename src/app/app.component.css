@@ -12,3 +12,6 @@
     align-items: flex-start;
   }
   
+  .container {
+    padding-bottom:70px;
+  }
