@@ -97,6 +97,7 @@
                         class="form-control"
                         name="adresseLivraison"
                         [(ngModel)]="form.adresseLivraison"
+                        required
                         #adresseLivraison="ngModel"
                     />
                     <div class="alert-danger" *ngIf="adresseLivraison.errors && f.submitted">
