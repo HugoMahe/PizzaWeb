@@ -21,6 +21,8 @@ import { InscriptionComponent } from './inscription/inscription.component';
 import { ProfilComponent } from './profil/profil.component';
 import { PizzaComponent } from './pizza/pizza.component';
 import { PizzaDetailComponent } from './pizza-detail/pizza-detail.component';
+import { PageNonTrouveComponent } from './page-non-trouve/page-non-trouve.component';
+import { NonConnecteComponent } from './non-connecte/non-connecte.component';
 
 @NgModule({
   declarations: [
@@ -31,7 +33,9 @@ import { PizzaDetailComponent } from './pizza-detail/pizza-detail.component';
     InscriptionComponent,
     ProfilComponent,
     PizzaComponent,
-    PizzaDetailComponent
+    PizzaDetailComponent,
+    PageNonTrouveComponent,
+    NonConnecteComponent
   ],
   imports: [
     BrowserModule,
