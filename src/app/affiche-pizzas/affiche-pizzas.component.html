@@ -1,30 +1,20 @@
-
-<!--
-
-
-<div *ngIf="pizza$ | async ">
-    <p>affiche-pizzas works!</p>
-    <ul>
-       
-        <li *ngFor="let pizza of (pizza$ | async)?.piz_list">
-            <p>affiche-pizzas works!</p>
-            <div *ngIf="pizza">
-                <p > pizzalio</p>
+<div class="row">
+    <div *ngFor="let pizza of pizza$ | async" class="divPizza">
+        <div class="card" data-toggle="modal" data-target="#pizzaDetail" (click)=setPizzaDetailId(pizza.piz_id)>
+            <img [src]="pizza.image | async" class="card-img-top">
+            <div class="card-body">
+                <div class="row">
+                    <div class="col-6">
+                        <h3 class="card-title text-pizza">{{pizza.piz_nom}}</h3>
+                    </div>
+                    <div class="col-6">
+                        <p class="text-right prix text-pizza">{{pizza.piz_prix}}€</p>
+                    </div>
+                </div>
             </div>
-           <span>{{pizza | json}}</span> 
-        </li> 
-    </ul>
-</div>
--->
-
-<ul>
-    <li *ngFor="let pizza of pizza$ | async ">{{pizza.piz_nom}}
-        <div>lien a utiliser {{pizza.piz_image}}
-           <img [src]="pizza.image | async">
         </div>
-    </li>
-</ul>
-
-<div class="item" *ngIf="pizzaCount">
-    <p> {{pizzaCount}} </p>
+    </div>
+</div>
+<div class="modal" tabindex="-1" id="pizzaDetail">
+    <app-pizza></app-pizza>
 </div>

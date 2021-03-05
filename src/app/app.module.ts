@@ -22,6 +22,7 @@ import { ProfilComponent } from './profil/profil.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { FormContactComponent } from './form-contact/form-contact.component';
 import { PanierComponent } from './panier/panier.component';
+import { PizzaComponent } from './pizza/pizza.component';
 
 @NgModule({
   declarations: [
@@ -34,6 +35,7 @@ import { PanierComponent } from './panier/panier.component';
     ContactsComponent,
     FormContactComponent,
     PanierComponent,
+    PizzaComponent
   ],
   imports: [
     BrowserModule,
