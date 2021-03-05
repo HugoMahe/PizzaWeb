@@ -7,11 +7,14 @@
             </button>
         </div>
         <div class="modal-body">
-            <p>Modal body text goes here.</p>
+            <ul>
+                <li *ngFor="let ingredient of pizza.ingredients">{{ingredient.igd_nom}}</li>
+            </ul>
+            <p class="text-right">{{pizza.piz_prix}}€</p>
         </div>
         <div class="modal-footer">
             <button type="button" class="btn btn-primary">Ajouter au panier</button>
-            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Fermer</button>
         </div>
     </div>
 </div>

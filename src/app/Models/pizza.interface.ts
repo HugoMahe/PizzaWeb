@@ -8,5 +8,5 @@ export interface IPizza{
     piz_image:string;
     image:Observable<SafeResourceUrl>;
     piz_prix:string;
-    ingredients: IIngredient[];
+    ingredients: IIngredient
 }
