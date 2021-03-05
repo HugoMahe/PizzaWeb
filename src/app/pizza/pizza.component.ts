@@ -1,7 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Component, Input, OnInit } from '@angular/core';
 import { IPizza } from '../Models/pizza.interface';
-import { PizzaSearchService } from '../pizza-search.service';
 
 @Component({
   selector: 'app-pizza',
@@ -9,14 +7,9 @@ import { PizzaSearchService } from '../pizza-search.service';
   styleUrls: ['./pizza.component.css']
 })
 export class PizzaComponent implements OnInit {
-  pizza$!: Observable<IPizza>;
+  @Input() pizza!: IPizza;
 
-  constructor(private readonly pizService: PizzaSearchService) { }
+  constructor() { }
 
   ngOnInit(): void {}
-
-  setPizzaDetail(id: number) {
-    this.pizza$ = this.pizService.getPizzaDetail(id);
-  }
-
 }

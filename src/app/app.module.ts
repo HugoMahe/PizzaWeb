@@ -20,6 +20,7 @@ import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
 import { ProfilComponent } from './profil/profil.component';
 import { PizzaComponent } from './pizza/pizza.component';
+import { PizzaDetailComponent } from './pizza-detail/pizza-detail.component';
 
 @NgModule({
   declarations: [
@@ -29,7 +30,8 @@ import { PizzaComponent } from './pizza/pizza.component';
     ConnexionComponent,
     InscriptionComponent,
     ProfilComponent,
-    PizzaComponent
+    PizzaComponent,
+    PizzaDetailComponent
   ],
   imports: [
     BrowserModule,

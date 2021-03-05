@@ -1,20 +1,8 @@
 <div class="row">
-    <div *ngFor="let pizza of pizza$ | async" class="divPizza">
-        <div class="card" data-toggle="modal" data-target="#pizzaDetail" (click)=setPizzaDetailId(pizza.piz_id)>
-            <img [src]="pizza.image | async" class="card-img-top">
-            <div class="card-body">
-                <div class="row">
-                    <div class="col-6">
-                        <h3 class="card-title text-pizza">{{pizza.piz_nom}}</h3>
-                    </div>
-                    <div class="col-6">
-                        <p class="text-right prix text-pizza">{{pizza.piz_prix}}€</p>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <div *ngFor="let pizza of pizza$ | async" class="divPizza" data-toggle="modal" data-target="#pizzaDetail" (click)=setPizzaDetailId(pizza.piz_id)>
+        <app-pizza [pizza]=pizza></app-pizza>
     </div>
 </div>
 <div class="modal" tabindex="-1" id="pizzaDetail">
-    <app-pizza></app-pizza>
+    <app-pizza-detail></app-pizza-detail>
 </div>
