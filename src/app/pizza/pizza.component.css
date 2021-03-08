@@ -1,8 +1,16 @@
 img {  
-    object-fit: cover; 
-    height: 300px;
+    object-fit: cover;
 }  
 
 .card-body {
-   padding: 0; 
+    padding-bottom: 6px;
+    padding-top: 15px;
+}
+
+.text-pizza {
+    margin-bottom: 6px;
+}
+
+.prix {
+    padding-top: 0.2em;
 }

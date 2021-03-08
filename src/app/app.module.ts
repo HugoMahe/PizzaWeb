@@ -24,6 +24,9 @@ import { FormContactComponent } from './form-contact/form-contact.component';
 import { PanierComponent } from './panier/panier.component';
 import { PizzaComponent } from './pizza/pizza.component';
 import { SuiviCommandeComponent } from './suivi-commande/suivi-commande.component';
+import { PizzaDetailComponent } from './pizza-detail/pizza-detail.component';
+import { PageNonTrouveComponent } from './page-non-trouve/page-non-trouve.component';
+import { NonConnecteComponent } from './non-connecte/non-connecte.component';
 
 @NgModule({
   declarations: [
@@ -37,7 +40,11 @@ import { SuiviCommandeComponent } from './suivi-commande/suivi-commande.componen
     FormContactComponent,
     PanierComponent,
     PizzaComponent,
-    SuiviCommandeComponent
+    SuiviCommandeComponent,
+    PizzaComponent,
+    PizzaDetailComponent,
+    PageNonTrouveComponent,
+    NonConnecteComponent
   ],
   imports: [
     BrowserModule,

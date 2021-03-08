@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Observable } from 'rxjs';
 
 const TOKEN_KEY = 'auth-token';
 const USER_KEY = 'auth-user';
@@ -34,5 +35,14 @@ export class TokenStorageService {
     }
 
     return {};
+  }
+
+  public isTokenExpired(): boolean {
+    if (window.sessionStorage.getItem(TOKEN_KEY) == null) {
+      return true;
+    }
+    else {
+      return false;
+    }
   }
 }

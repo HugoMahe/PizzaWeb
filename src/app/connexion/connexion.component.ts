@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from '../_services/auth.service';
 import { TokenStorageService } from '../_services/token-storage.service';
 
@@ -16,11 +17,19 @@ export class ConnexionComponent implements OnInit {
   connectionRate = false;
   messageErreur = '';
 
-  constructor(private authService: AuthService, private tokenStorage: TokenStorageService) { }
+  constructor(private authService: AuthService, private tokenStorage: TokenStorageService, private router: Router) { }
 
   ngOnInit(): void {
     if (this.tokenStorage.getToken()) {
       this.estConnecte = true;
+    }
+    
+    if (this.estConnecte) {
+      setTimeout(() => 
+      {
+        this.router.navigateByUrl('pizzas')
+      },
+      1000);
     }
   }
 

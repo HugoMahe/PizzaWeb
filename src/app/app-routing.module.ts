@@ -3,6 +3,8 @@ import { RouterModule, Routes } from '@angular/router';
 import { AffichePizzasComponent } from './affiche-pizzas/affiche-pizzas.component';
 import { ConnexionComponent } from './connexion/connexion.component';
 import { InscriptionComponent } from './inscription/inscription.component';
+import { NonConnecteComponent } from './non-connecte/non-connecte.component';
+import { PageNonTrouveComponent } from './page-non-trouve/page-non-trouve.component';
 import { ProfilComponent } from './profil/profil.component';
 import { ContactsComponent } from './contacts/contacts.component';
 import { PanierComponent } from './panier/panier.component';
@@ -15,7 +17,10 @@ const routes: Routes = [
   { path: 'pizzas', component: AffichePizzasComponent },
   { path: 'contacts', component: ContactsComponent },
   { path: 'panier', component: PanierComponent  },
-  { path: 'suiviCommande', component: SuiviCommandeComponent}
+  { path: 'suiviCommande', component: SuiviCommandeComponent},
+  { path: 'nonConnecte', component: NonConnecteComponent },
+  { path: '', redirectTo: 'pizzas', pathMatch: 'full' },
+  { path: '**', component: PageNonTrouveComponent }
 ];
 
 @NgModule({

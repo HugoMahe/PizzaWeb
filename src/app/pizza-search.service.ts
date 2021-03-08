@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
+import { Observable, pipe } from 'rxjs';
 import { IPizza } from './Models/pizza.interface';
 import {map, mergeMap} from 'rxjs/operators'
 import {ImageService} from './image.service';
@@ -46,6 +46,6 @@ export class PizzaSearchService {
    }
 
    public getPizzaDetail(idParam: number): Observable<IPizza> {
-    return this.http.get<IPizza>('http://localhost:8080/api/pizza/detail/' + idParam)
+    return this.http.get<IPizza>('http://localhost:8080/api/pizza/detail/' + idParam);
   }
 }

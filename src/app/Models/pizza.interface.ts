@@ -14,4 +14,3 @@ export interface IPizza{
 export interface IPanierPizza{
     tabPizza: IPizza[];
 }
-
